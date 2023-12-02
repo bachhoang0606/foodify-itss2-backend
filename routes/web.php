@@ -9,20 +9,9 @@ use App\Http\Controllers\LocaleController;
  */
 
 // Switch between the included languages
-Route::get('lang/{lang}', [LocaleController::class, 'change'])->name('locale.change');
-
-/*
- * Frontend Routes
- */
-Route::group(['as' => 'frontend.'], function () {
-    includeRouteFiles(__DIR__.'/frontend/');
+Route::get('/home', function () {
+    return "oke";
 });
-
-/*
- * Backend Routes
- *
- * These routes can only be accessed by users with type `admin`
- */
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
-    includeRouteFiles(__DIR__.'/backend/');
+Route::get('/', function () {
+    return "Root";
 });
