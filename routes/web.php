@@ -15,3 +15,7 @@ Route::get('/home', function () {
 Route::get('/', function () {
     return "Root";
 });
+
+Route::get('/info', function () {
+    phpinfo();
+});
