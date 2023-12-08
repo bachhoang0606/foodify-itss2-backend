@@ -39,6 +39,10 @@ class Food extends Model
     {
         return $this->belongsTo(FoodCategory::class, 'food_categories_id');
     }
+    public function region()
+    {
+        return $this->belongsTo(FoodCategoryRegion::class, 'food_category_regions_id');
+    }
 
     public function comments()
     {
