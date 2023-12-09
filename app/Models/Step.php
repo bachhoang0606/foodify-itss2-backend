@@ -17,7 +17,7 @@ class Step extends Model
         'content',
     ];
 
-    public function food()
+    public function foods()
     {
         return $this->belongsTo(Food::class, 'foods_id');
     }
