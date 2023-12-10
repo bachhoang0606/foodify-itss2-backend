@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FoodController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +23,8 @@ Route::get('/home',  function () {
 });
 Route::get('/info', function () {
     phpinfo();
+});
+
+Route::prefix('food')->group(function () {
+    Route::get('/search', [FoodController::class, 'search']);
 });
