@@ -20,6 +20,11 @@ console_command = "php /var/www/html/artisan tinker"
   SESSION_DRIVER = "cookie"
   SESSION_SECURE_COOKIE = "true"
 
+  DB_CONNECTION="pgsql"
+  DB_HOST="foodify-app-database.internal"
+  DB_PORT="5432"
+  DB_DATABASE="foodify_database"
+
 [http_service]
   internal_port = 8080
   force_https = true
@@ -32,3 +37,5 @@ console_command = "php /var/www/html/artisan tinker"
   cpu_kind = "shared"
   cpus = 1
   memory_mb = 1024
+
+# after deploy: fly ssh console -C "php /var/www/html/artisan migrate:refresh --seed"
