@@ -30,7 +30,7 @@ class FoodController extends Controller
             $query->whereIn('id', $foodIds);
         }
 
-        $foods = $query->get();
+        $foods = $query->with('category', 'region')->get();
 
         return $foods;
     }
