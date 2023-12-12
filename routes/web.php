@@ -25,6 +25,8 @@ Route::get('/info', function () {
     phpinfo();
 });
 
-Route::prefix('food')->group(function () {
-    Route::get('/search', [FoodController::class, 'search']);
+Route::group(['middleware' => ['cors']], function () {
+    Route::prefix('food')->group(function () {
+        Route::get('/search', [FoodController::class, 'search']);
+    });
 });
