@@ -51,7 +51,7 @@ class Food extends Model
 
     public function steps()
     {
-        return $this->hasMany(Step::class, 'foods_id');
+        return $this->hasMany(Step::class, 'foods_id')->orderBy('number');
     }
 
     public function ingredients()
