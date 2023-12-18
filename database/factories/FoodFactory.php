@@ -102,20 +102,6 @@ class FoodFactory extends Factory
             'https://www.youtube.com/watch?v=DrjgtZqU3j0&pp=ygUiY8O0bmcgdGjhu6ljICBCw4FOSCBI4bqgTkggTkjDgk4nLA%3D%3D',
             'https://www.youtube.com/watch?v=ESv-kZNllRs&pp=ygUsY8O0bmcgdGjhu6ljICBCw4FOSCBNw4wgTsav4buaQyBLSeG7glUgUEjDgVA%3D',
             'https://www.youtube.com/watch?v=WI_ut7dTRQ8&pp=ugMICgJ2aRABGAHKBR5jw7RuZyB0aOG7qWMgICAnQ0hJQ0tFTiBQQVJNJyw%3D',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
         ];
 
         $index = $this->faker->numberBetween(0, 19);
