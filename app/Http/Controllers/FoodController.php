@@ -19,14 +19,18 @@ class FoodController extends Controller
         $query = Food::query();
 
         if ($name) {
-            $query->where('name', 'like', '%' . $name . '%');
+            $name = strtolower($name);
+            $query->whereRaw('lower(name) like (?)',["%{$name}%"]);
         }
 
         if ($ingredients) {
             $foodIds = Food::pluck('id')->toArray();
+            $ingredients = collect($ingredients)->map(function ($item) {
+                return strtolower($item);
+            })->toArray();
             foreach ($ingredients as $ingredient) {
                 $foodIds = Ingredient::whereIn('foods_id', $foodIds)
-                ->where('description', 'like', '%' . $ingredient . '%')
+                ->whereRaw('lower(description) like (?)',["%{$ingredient}%"])
                 ->groupBy('foods_id')->pluck('foods_id')->toArray();
             }
             
