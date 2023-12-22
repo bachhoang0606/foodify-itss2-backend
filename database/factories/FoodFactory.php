@@ -48,7 +48,28 @@ class FoodFactory extends Factory
             'BÁNH MÌ NƯỚC KIỂU PHÁP',
             'CHICKEN PARM',
         ];
-
+        $foodName_no_accent = [
+            'Pho Ga',
+            'Bun Rieu',
+            'Goi Cuon',
+            'Com Nieu',
+            'Banh Bao Nhan Thit Xoi Nuoc',
+            'Bun Bo Hue',
+            'Banh Mi Pate Chao',
+            'Bo Luc Lac',
+            'Com Ga Hai Nam',
+            'Banh Canh Cua',
+            'BAP RANG BO',
+            'MASALA DOSA',
+            'COM THAP CAM PAELLA',
+            'GOI DU DU',
+            'COM GA SINGAPORE',
+            'POUTINE',
+            'TACO',
+            'BANH HANH NHAN',
+            'BANH MI NUOC KIEU PHAP',
+            'CHICKEN PARM',
+        ];
         $foodVideo = [
             'https://www.youtube.com/watch?v=i49DgHaid9I&pp=ygUUQ8OhY2ggbMOgbSBwaOG7nyBnw6A%3D',
             'https://www.youtube.com/watch?v=rGd-uETciYg&pp=ygUVQ8OhY2ggbMOgbSBiw7puIHJpw6p1',
@@ -80,6 +101,7 @@ class FoodFactory extends Factory
             'deleted_flag' => $this->faker->numberBetween(0, 1),
             // 'name' => $this->faker->sentence,
             'name' => $foodName[$index],
+            'name_no_accent' => $foodName_no_accent[$index],
             'description' => $this->faker->paragraph,
             'views' => $this->faker->numberBetween(100, 1000),
             'total_like' => $this->faker->numberBetween(10, 100),

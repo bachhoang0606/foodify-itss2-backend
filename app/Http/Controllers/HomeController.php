@@ -16,10 +16,13 @@ class HomeController extends Controller
         
         $randomFoods = Food::inRandomOrder()->limit($limtitNumber)->get();
 
+        $mostLikes = Food::orderBy('total_like', 'DESC')->first();
+
         return response()->json([
             'trend_foods' => $trendFoods,
             'newest_foods' => $newestFoods,
-            'ramdon_foods' => $randomFoods
+            'ramdon_foods' => $randomFoods,
+            'most_likes_food' => $mostLikes,
         ], 200);
     }
 }

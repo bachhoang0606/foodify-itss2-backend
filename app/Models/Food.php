@@ -17,6 +17,7 @@ class Food extends Model
         'users_id',
         'deleted_flag',
         'name',
+        'name_no_accent',
         'description',
         'views',
         'total_like',

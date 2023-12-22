@@ -12,7 +12,9 @@ class Ingredient extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'foods_id',
-        'description',
+        'name',
+        'name_no_accent',
+        'quantity'
     ];
 
     public function foods()

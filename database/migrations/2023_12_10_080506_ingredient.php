@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('foods_id')->constrained();
-            $table->string('description');
+            $table->string('name');
+            $table->string('name_no_accent');
+            $table->string('quantity');
             $table->timestamps();
         });
     }
