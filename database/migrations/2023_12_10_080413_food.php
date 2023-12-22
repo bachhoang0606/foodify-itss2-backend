@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('deleted_flag');
             $table->string('name');
+            $table->string('name_no_accent');
             $table->text('description');
             $table->integer('views');
             $table->integer('total_like');
