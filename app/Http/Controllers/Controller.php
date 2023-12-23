@@ -41,7 +41,7 @@ class Controller extends BaseController
     }
 
     public function isSubstring($str, $subStr){
-        if (strpos(strtolower($str), strtolower($subStr)) !== false) {
+        if (strpos(mb_strtolower($str, 'UTF-8'), mb_strtolower($subStr, 'UTF-8')) !== false) {
             return true;
         } else {
             return false;
