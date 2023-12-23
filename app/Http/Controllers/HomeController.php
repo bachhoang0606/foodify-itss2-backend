@@ -8,7 +8,7 @@ use App\Models\Food;
 class HomeController extends Controller
 {
     public function home() {
-        $limtitNumber = 3;
+        $limtitNumber = 9;
 
         $trendFoods = Food::orderBy('views', 'desc')->limit($limtitNumber)->get();
 
