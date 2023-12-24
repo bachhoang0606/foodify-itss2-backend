@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IngredientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +38,9 @@ Route::group(['middleware' => ['cors']], function () {
             Route::get('/comments', [CommentController::class, 'index']);
             Route::post('/comments/save', [CommentController::class, 'store']);
         });
+    });
+
+    Route::prefix('ingredient')->group(function () {
+        Route::get('/', [IngredientController::class, 'index']);
     });
 });
