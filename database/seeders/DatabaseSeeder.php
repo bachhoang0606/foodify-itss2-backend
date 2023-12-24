@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         Comment::factory(500)->create();
         $this->call(StepSeeder::class);
         $this->call(IngredientSeeder::class);
-        Step::factory(100)->create();
+        // Step::factory(300)->create();
         Ingredient::factory(100)->create();
     }
 }

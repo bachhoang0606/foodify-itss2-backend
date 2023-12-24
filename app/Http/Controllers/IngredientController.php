@@ -14,7 +14,10 @@ class IngredientController extends Controller
      */
     public function index(Request $request)
     {
-        $names = Ingredient::pluck('name')->toArray();
-        return $names;
+        $names = Ingredient::pluck('name');
+        $names = $names->map(function($item) {
+            return mb_strtolower($item, 'UTF-8');
+        })->toArray();
+        return array_unique($names);;
     }
 }
