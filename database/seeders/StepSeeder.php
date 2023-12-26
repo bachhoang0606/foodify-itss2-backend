@@ -228,7 +228,7 @@ class StepSeeder extends Seeder
             'Làm nóng chảo trên bếp và cho vào chảo 100ml dầu ăn. Đợi dầu sôi, cho khoai tây vào chiên khoảng 10 phút cho giòn sau đó vớt ra để lên giấy để thấm bớt dầu thừa trong khoai tây. Trong quá trình chiên khoai tây, bạn nên đảo thường xuyên để khoai được chín vàng đều. ',
             'Sau khi đợi thịt thấm đều gia vị và sơ chế xong các nguyên liệu phụ. Bạn sẽ tiến hành xào thịt bò lúc lắc. Trước tiên bắc chảo lên bếp mở lửa lớn, cho vào đó 1 muỗng canh dầu ăn. Đợi dầu nóng thì cho phần tỏi băm nhuyễn vào phi thơm. Thịt bò chỉ nên xào chín tới không nên xào quá dai  Cho tiếp phần thịt bò đã ướp vào xào với lửa lớn trong thời gian từ 3 đến 4 phút để thịt săn lại.Tiếp theo cho thêm hành tây, ớt chuông vào xào chung trong khoảng 3 phút. Cuối cùng nêm nếm lại món ăn một lần nữa cho vừa ăn rồi tắt bếp bày ra đĩa ăn kèm với khoai tây chiên. '
         ];
-        
+
         for ($i = 0; $i < 300; $i++) {
             $foodId = Food::inRandomOrder()->limit(1)->pluck('id')->toArray()[0];
             Step::create([

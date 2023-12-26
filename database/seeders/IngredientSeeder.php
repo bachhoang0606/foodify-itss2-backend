@@ -111,7 +111,7 @@ class IngredientSeeder extends Seeder
             ['Hạt nêm', '1 ít', 'Hat nem'],
             ['Nước mắm', '1 ít', 'Nuoc mam'],
             ['Dầu ăn', '1 ít', 'Dau an']
-        ];  
+        ];
 
         $goiCuonIngre = [
             ['Thịt nạc heo', '500 gram', 'Thit nac heo'],
@@ -124,7 +124,7 @@ class IngredientSeeder extends Seeder
             ['Tỏi', '3 tép', 'Toi'],
             ['Ớt', '2 trái', 'Ot'],
             ['Rau sống', '400 gram', 'Rau song'],
-        ];        
+        ];
 
         $comNieuIngre = [
             ['Gạo tẻ', '250 gram', 'Gao te'],
@@ -223,7 +223,7 @@ class IngredientSeeder extends Seeder
             ['Xà lách', '1 ít', 'Xa lach'],
             ['Dầu ăn', '3 muỗng cà phê', 'Dau an']
         ];
-        
+
         $bunBoHueId = Food::where('name', 'Bún Bò Huế')->pluck('id')->first();
         foreach ($bunboHueIngre as $ingredient) {
             Ingredient::create([
