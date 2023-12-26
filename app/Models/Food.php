@@ -17,6 +17,7 @@ class Food extends Model
         'users_id',
         'deleted_flag',
         'name',
+        'name_no_accent',
         'description',
         'views',
         'total_like',
@@ -51,7 +52,7 @@ class Food extends Model
 
     public function steps()
     {
-        return $this->hasMany(Step::class, 'foods_id');
+        return $this->hasMany(Step::class, 'foods_id')->orderBy('number');
     }
 
     public function ingredients()

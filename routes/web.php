@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IngredientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +17,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home',  function () {
-    return 'App is running in home';
-});
-Route::get('/info', function () {
-    phpinfo();
+
+
+Route::group(['middleware' => ['cors']], function () {
+    Route::get('/', function () {
+        return 'App is running in home';
+    });
+
+    Route::get('/info', function () {
+        phpinfo();
+    });
+
+    Route::get('/home', [HomeController::class, 'home']);
+    
+    Route::prefix('food')->group(function () {
+        Route::get('/search', [FoodController::class, 'search']);
+
+        Route::prefix('/{food}')->group(function () {
+            Route::get('/', [FoodController::class, 'show']);
+            Route::get('/comments', [CommentController::class, 'index']);
+            Route::post('/comments/save', [CommentController::class, 'store']);
+        });
+    });
+
+    Route::prefix('ingredient')->group(function () {
+        Route::get('/', [IngredientController::class, 'index']);
+    });
 });
